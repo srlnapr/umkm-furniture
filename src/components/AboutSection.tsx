@@ -1,46 +1,46 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Trees, HandMetal, Flame, Box } from "lucide-react";
+import { CheckCircle2, Trees, Sparkles, Flame, ShieldCheck } from "lucide-react";
 
-const STAGES = [
+const VALUES = [
   {
     step: "01",
-    title: "Conscious Material Sourcing",
-    desc: "Responsibly harvested natural wild rattan from certified Sulawesi concessions, architectural reclaimed teak rescued from colonial-era Javanese joglo structures, and unglazed volcanic clay.",
-    badge: "SVLK & FSC Regulated",
+    title: "Kayu Jati Solid Pilihan",
+    desc: "Menggunakan kayu jati berkualitas tinggi dengan serat kayu matang dan kokoh, serta rotan alami pilihan tanpa campuran bahan kimia sintetis berbahaya.",
+    badge: "100% Kayu Legal & Berkualitas",
     badgeColor: "bg-tertiary-fixed text-on-tertiary-fixed",
     icon: Trees,
   },
   {
     step: "02",
-    title: "Slow, Master Hand-Weaving",
-    desc: "Traditional wicker, cane, and open octagonal webbing hand-woven over steam-bent structural rattan frames. Crafted entirely without toxic petroleum synthetic binders or chemical adhesives.",
-    badge: "Zero Synthetic Resins",
+    title: "Sentuhan Pengrajin Ahli",
+    desc: "Dikerjakan dengan ketelitian tangan para pengrajin lokal berpengalaman puluhan tahun, memadukan teknik sambungan kayu tradisional yang kuat dan rapi.",
+    badge: "Keahlian Asli Pengrajin",
     badgeColor: "bg-surface-container text-on-surface-variant",
-    icon: HandMetal,
+    icon: Sparkles,
   },
   {
     step: "03",
-    title: "Precision Kiln Seasoning",
-    desc: "Computer-calibrated dehumidification drying chambers stabilizing core moisture content to 8–12% MC. Built to withstand dry continental winter HVAC without checking or structural warp.",
-    badge: "8–12% MC Export Standard",
+    title: "Kayu Oven Kering Terstandar",
+    desc: "Melalui proses pengeringan kiln-dried untuk memastikan kadar air kayu stabil, sehingga perabot tidak mudah susut, melengkung, ataupun retak.",
+    badge: "Kadar Air Stabil & Tahan Lama",
     badgeColor: "bg-surface-container text-on-surface-variant",
     icon: Flame,
   },
   {
     step: "04",
-    title: "Export QA & Clean Crating",
-    desc: "Triple-point joinery load testing, certified ISPM-15 heat-treated maritime timber crates, biodegradable honeycomb liners, and moisture-absorbing silica packets for container sea crossings.",
-    badge: "ISPM-15 Phytosanitary Clean",
+    title: "Finishing Halus & Ramah Lingkungan",
+    desc: "Menggunakan lilin lebah alami (natural beeswax) dan pelapis ramah lingkungan yang aman untuk keluarga serta menonjolkan keindahan serat alami kayu.",
+    badge: "Aman & Tahan Cuaca",
     badgeColor: "bg-secondary-fixed text-on-secondary-fixed",
-    icon: Box,
+    icon: ShieldCheck,
   },
 ];
 
-export default function ProvenanceSection() {
+export default function AboutSection() {
   return (
-    <section id="story" className="w-full bg-surface-container-low/70 py-20 lg:py-28 border-y border-outline-variant/30">
+    <section id="about" className="w-full bg-surface-container-low/70 py-20 lg:py-28 border-y border-outline-variant/30">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Header Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-start">
@@ -52,10 +52,10 @@ export default function ProvenanceSection() {
             className="lg:col-span-5 flex flex-col gap-2.5"
           >
             <span className="text-xs uppercase tracking-[0.2em] text-secondary font-semibold">
-              Provenance & Ethics
+              Tentang Kami
             </span>
             <h2 className="font-serif text-2xl sm:text-4xl lg:text-4xl text-primary font-normal tracking-tight leading-snug">
-              Honoring Ancestral Heritage, Empowering Artisan Collectives
+              Melestarikan Kriya Kayu Nusantara untuk Kenyamanan Hunian Anda
             </h2>
           </motion.div>
 
@@ -67,14 +67,17 @@ export default function ProvenanceSection() {
             className="lg:col-span-7 flex flex-col gap-6 justify-center"
           >
             <p className="text-base sm:text-lg text-on-surface-variant leading-relaxed font-light">
-              By marrying age-old Indonesian handcraft traditions with Scandinavian minimalism and wabi-sabi silhouettes, Kala & Kayu builds heirloom-grade architectural living collections. Every piece is co-created with independent master guilds in Jepara, Cirebon, and Lombok under strict living wage guarantees and multi-generational knowledge transfers.
+              Berawal dari kecintaan terhadap keahlian pertukangan kayu di Jepara, <strong>Kala & Kayu</strong> hadir untuk menghadirkan furniture berkualitas tinggi yang memadukan kehangatan kayu jati solid dan anyaman rotan alami dengan desain modern yang tak lekang oleh waktu.
+            </p>
+            <p className="text-sm sm:text-base text-on-surface-variant leading-relaxed font-light">
+              Setiap karya diciptakan dengan dedikasi tinggi oleh pengrajin lokal berbakat. Kami percaya bahwa perabot yang baik tidak hanya mempercantik ruangan, tetapi juga memberikan kenyamanan sejati dan dapat diwariskan dari generasi ke generasi.
             </p>
 
             <div className="flex flex-wrap items-center gap-6 pt-1 text-on-surface">
               {[
-                "Direct Trade (No Middlemen Brokers)",
-                "FSC Reclaimed Teak Sourcing",
-                "Non-Toxic Botanical Finishes",
+                "Langsung dari Pengrajin Lokal",
+                "Kayu Jati & Rotan Pilihan",
+                "Bisa Custom Ukuran & Model",
               ].map((feat, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0" />
@@ -85,13 +88,13 @@ export default function ProvenanceSection() {
           </motion.div>
         </div>
 
-        {/* 4-Stage Craft Cards */}
+        {/* 4-Stage Craft / Value Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {STAGES.map((stage, idx) => {
-            const Icon = stage.icon;
+          {VALUES.map((item, idx) => {
+            const Icon = item.icon;
             return (
               <motion.div
-                key={stage.step}
+                key={item.step}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -102,7 +105,7 @@ export default function ProvenanceSection() {
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center justify-between pb-2 border-b border-outline-variant/20">
                     <span className="font-serif text-3xl font-light text-secondary">
-                      {stage.step}
+                      {item.step}
                     </span>
                     <div className="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary">
                       <Icon className="w-4 h-4" />
@@ -110,19 +113,19 @@ export default function ProvenanceSection() {
                   </div>
 
                   <h3 className="font-serif text-lg text-primary font-medium tracking-tight">
-                    {stage.title}
+                    {item.title}
                   </h3>
 
                   <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed font-light">
-                    {stage.desc}
+                    {item.desc}
                   </p>
                 </div>
 
                 <div className="mt-6 pt-3">
                   <span
-                    className={`inline-block px-3 py-1 rounded-full text-[11px] uppercase tracking-wider font-medium ${stage.badgeColor}`}
+                    className={`inline-block px-3 py-1 rounded-full text-[11px] uppercase tracking-wider font-medium ${item.badgeColor}`}
                   >
-                    {stage.badge}
+                    {item.badge}
                   </span>
                 </div>
               </motion.div>

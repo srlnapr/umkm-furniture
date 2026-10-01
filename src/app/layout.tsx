@@ -17,17 +17,18 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Kala & Kayu — Artisanal Indonesian Living | Architectural Export Folio",
+  title: "Kala & Kayu — Mebel Kayu Jati & Rotan Pilihan Jepara",
   description:
-    "Sustainably hand-carved reclaimed teak, architectural rattan weaving, and volcanic stone homewares made by master artisans across Java, Bali, and Lombok for international trade and luxury living.",
+    "Kala & Kayu menghadirkan karya mebel kayu jati solid dan kerajinan rotan alami berkualitas tinggi dari pengrajin Jepara. Melayani kebutuhan furniture hunian dan pesanan custom.",
   keywords: [
-    "Indonesian furniture",
-    "Jepara teak",
-    "Cirebon rattan",
-    "artisanal living",
-    "B2B export furniture",
-    "sustainable teak",
-    "SVLK certified",
+    "mebel jepara",
+    "furniture kayu jati",
+    "mebel rotan alami",
+    "kerajinan kayu",
+    "custom furniture",
+    "kursi kayu jati",
+    "meja jati solid",
+    "kala kayu",
   ],
 };
 
@@ -37,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${plusJakarta.variable}`}>
+    <html lang="id" className={`${playfair.variable} ${plusJakarta.variable}`}>
       <body className="min-h-screen bg-surface font-sans text-on-surface antialiased">
         {children}
       </body>

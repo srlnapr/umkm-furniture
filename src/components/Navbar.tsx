@@ -3,19 +3,20 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 
 const NAV_LINKS = [
-  { name: "Atelier Story", href: "#story" },
-  { name: "Curated Folio", href: "#collections" },
-  { name: "Studio Inspection", href: "#inspection" },
-  { name: "Trade Program", href: "#trade-program" },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Products", href: "#products" },
+  { name: "Gallery", href: "#gallery" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("#home");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,11 +40,11 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
-          {/* Brand Identity - Clean & Elegant */}
+          {/* Brand Identity - Clean & Artisanal */}
           <Link
             href="/"
             className="flex items-center gap-3.5 group"
-            onClick={() => setActiveSection("")}
+            onClick={() => setActiveSection("#home")}
           >
             <div className="w-9 h-9 rounded-full bg-primary-container text-[#e5d5cb] flex items-center justify-center font-serif text-lg font-semibold tracking-wider shadow-sm transition-transform duration-300 group-hover:scale-105">
               K
@@ -53,12 +54,12 @@ export default function Navbar() {
                 Kala & Kayu
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-outline font-medium -mt-0.5">
-                Artisanal Living
+                Mebel & Kerajinan Kayu
               </span>
             </div>
           </Link>
 
-          {/* Clean Central Nav Links - Not Crowded */}
+          {/* Clean Central Nav Links: Home | About | Products | Gallery | Contact */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2 bg-surface-container-low/70 px-3 py-1.5 rounded-full border border-outline-variant/30 backdrop-blur-sm">
             {NAV_LINKS.map((link) => {
               const isActive = activeSection === link.href;
@@ -86,21 +87,18 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Right Action CTA - Minimalist & Refined */}
+          {/* Right Action CTA: WhatsApp Button */}
           <div className="hidden sm:flex items-center gap-4">
-            <span className="hidden xl:inline-flex items-center gap-1.5 text-xs text-outline font-medium tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
-              FCL / LCL Export Ready
-            </span>
-
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="#trade-inquiry"
+              href="https://wa.me/6281129408820?text=Halo%20Kala%20%26%20Kayu%2C%20saya%20ingin%20konsultasi%20furniture."
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary-container hover:bg-secondary text-on-primary text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-full shadow-sm transition-colors duration-300"
             >
-              <span>Trade Inquiry</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#ffdbcb]" />
+              <MessageCircle className="w-3.5 h-3.5 text-[#ffdbcb]" />
+              <span>WhatsApp</span>
             </motion.a>
           </div>
 
@@ -109,7 +107,7 @@ export default function Navbar() {
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-lg text-primary hover:bg-surface-container transition-colors"
-            aria-label="Toggle menu"
+            aria-label="Menu navigasi"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -127,15 +125,6 @@ export default function Navbar() {
             className="fixed top-16 left-0 right-0 z-40 bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 shadow-xl md:hidden overflow-hidden"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
-              <div className="flex items-center justify-between pb-3 border-b border-outline-variant/20">
-                <span className="text-xs uppercase tracking-widest text-outline">
-                  Indonesian Artisanal Guilds
-                </span>
-                <span className="inline-flex items-center gap-1 text-[11px] text-secondary font-medium">
-                  <Sparkles className="w-3 h-3" /> SVLK Certified
-                </span>
-              </div>
-
               <div className="flex flex-col gap-2">
                 {NAV_LINKS.map((link, idx) => (
                   <motion.a
@@ -157,15 +146,15 @@ export default function Navbar() {
 
               <div className="pt-4 border-t border-outline-variant/20 flex flex-col gap-3">
                 <a
-                  href="#trade-inquiry"
+                  href="https://wa.me/6281129408820?text=Halo%20Kala%20%26%20Kayu%2C%20saya%20ingin%20konsultasi%20furniture."
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full text-center bg-primary-container hover:bg-secondary text-on-primary py-3 rounded-xl text-xs uppercase tracking-wider font-semibold transition-colors"
+                  className="w-full text-center bg-primary-container hover:bg-secondary text-on-primary py-3 rounded-xl text-xs uppercase tracking-wider font-semibold transition-colors flex items-center justify-center gap-2"
                 >
-                  Request 2025 Lookbook & Quote
+                  <MessageCircle className="w-4 h-4 text-[#ffdbcb]" />
+                  <span>Hubungi via WhatsApp</span>
                 </a>
-                <p className="text-center text-[11px] text-outline">
-                  FOB Semarang & Surabaya • Direct Port Sailings
-                </p>
               </div>
             </div>
           </motion.div>

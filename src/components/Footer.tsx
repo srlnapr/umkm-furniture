@@ -1,185 +1,157 @@
 "use client";
 
-import { useState } from "react";
 import {
-  CheckCircle,
-  TreeDeciduous,
-  Handshake,
-  Box,
-  Truck,
-  Send,
-  Check,
+  MessageCircle,
+  Mail,
+  MapPin,
+  Clock,
+  Heart,
 } from "lucide-react";
 
-export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setSubscribed(true);
-    setTimeout(() => {
-      setEmail("");
-    }, 2000);
-  };
-
+function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
-    <footer className="w-full bg-surface-container-low text-on-surface pt-20 pb-12 border-t border-outline-variant/30">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
+
+export default function Footer() {
+  return (
+    <footer className="w-full bg-surface-container-low text-on-surface pt-16 pb-12 border-t border-outline-variant/30">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16 border-b border-outline-variant/20">
-          {/* Brand Column (4 cols) */}
-          <div className="lg:col-span-4 flex flex-col gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-outline-variant/20">
+          {/* Brand Column (5 cols) */}
+          <div className="lg:col-span-5 flex flex-col gap-4">
             <div className="flex items-center gap-2">
               <span className="font-serif text-2xl font-medium text-primary">
                 Kala & Kayu
               </span>
               <span className="text-[10px] uppercase tracking-widest text-secondary font-semibold border-l border-outline-variant/40 pl-2">
-                Export Atelier
+                Mebel & Kerajinan
               </span>
             </div>
 
             <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed font-light max-w-sm">
-              Curating heirloom architectural woodwork, hand-carved teak, raw terracotta, and organic botanical textiles from master Indonesian craft sanctuaries for international trade.
+              Menghadirkan karya furniture kayu jati solid pilihan dan anyaman rotan alami berkualitas tinggi langsung dari sentuhan pengrajin Jepara untuk menciptakan kenyamanan di setiap sudut hunian Anda.
             </p>
 
-            <div className="mt-2 flex flex-col gap-2">
-              <span className="text-[10px] uppercase tracking-wider text-outline font-medium">
-                Artisanal Origin Hubs
-              </span>
-              <div className="flex flex-wrap gap-2 text-xs text-on-surface">
-                <span className="hover:text-secondary transition-colors cursor-default">
-                  Jepara (Teak)
-                </span>
-                <span className="text-outline-variant">•</span>
-                <span className="hover:text-secondary transition-colors cursor-default">
-                  Cirebon (Rattan)
-                </span>
-                <span className="text-outline-variant">•</span>
-                <span className="hover:text-secondary transition-colors cursor-default">
-                  Bali (Stone & Clay)
-                </span>
-                <span className="text-outline-variant">•</span>
-                <span className="hover:text-secondary transition-colors cursor-default">
-                  Lombok (Pottery)
-                </span>
-              </div>
+            <div className="flex items-center gap-3 pt-2">
+              <a
+                href="https://wa.me/6281129408820?text=Halo%20Kala%20%26%20Kayu%2C%20saya%20ingin%20konsultasi%20furniture."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-surface hover:bg-emerald-600 hover:text-white flex items-center justify-center text-primary shadow-xs transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-4 h-4" />
+              </a>
+
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-surface hover:bg-rose-600 hover:text-white flex items-center justify-center text-primary shadow-xs transition-colors"
+                aria-label="Instagram"
+              >
+                <InstagramIcon className="w-4 h-4" />
+              </a>
+
+              <a
+                href="mailto:halo@kalakayu.com"
+                className="w-9 h-9 rounded-full bg-surface hover:bg-secondary hover:text-white flex items-center justify-center text-primary shadow-xs transition-colors"
+                aria-label="Email"
+              >
+                <Mail className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
-          {/* Trade Links (3 cols) */}
+          {/* Quick Nav Links (3 cols) */}
           <div className="lg:col-span-3 flex flex-col gap-3">
             <h4 className="font-serif text-base text-primary font-medium">
-              Trade & Specifier Inquiry
+              Navigasi Halaman
             </h4>
-            <ul className="flex flex-col gap-2 text-xs text-on-surface-variant font-light">
+            <ul className="flex flex-col gap-2.5 text-xs sm:text-sm text-on-surface-variant font-light">
               <li>
-                <a href="#trade-program" className="hover:text-primary transition-colors">
-                  B2B Trade Application
+                <a href="#home" className="hover:text-primary transition-colors">
+                  Beranda
                 </a>
               </li>
               <li>
-                <a href="#inspection" className="hover:text-primary transition-colors">
-                  Interactive Spec Library (CAD & 3D)
+                <a href="#about" className="hover:text-primary transition-colors">
+                  Tentang Kami
                 </a>
               </li>
               <li>
-                <a href="#collections" className="hover:text-primary transition-colors">
-                  Curated Hospitality Collections
+                <a href="#products" className="hover:text-primary transition-colors">
+                  Katalog Produk
                 </a>
               </li>
               <li>
-                <a href="#trade-inquiry" className="hover:text-primary transition-colors">
-                  Request Commercial FCL/LCL Quote
+                <a href="#gallery" className="hover:text-primary transition-colors">
+                  Keunggulan & Galeri
                 </a>
               </li>
               <li>
-                <a href="#story" className="hover:text-primary transition-colors">
-                  Artisan Guild Provenance
+                <a href="#contact" className="hover:text-primary transition-colors">
+                  Kontak & Lokasi
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* ESG & Compliance (3 cols) */}
-          <div className="lg:col-span-3 flex flex-col gap-3">
+          {/* Contact Details (4 cols) */}
+          <div className="lg:col-span-4 flex flex-col gap-3">
             <h4 className="font-serif text-base text-primary font-medium">
-              ESG & Compliance
+              Kontak & Workshop
             </h4>
-            <p className="text-xs text-on-surface-variant font-light leading-relaxed">
-              Every piece conforms to responsible stewardship, ethical living wages, and certified forestry custody.
-            </p>
-            <div className="flex flex-col gap-2 pt-1 text-xs text-on-surface font-light">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-3.5 h-3.5 text-secondary flex-shrink-0" />
-                <span>SVLK Certified (Indonesian Timber Legality)</span>
+            <div className="flex flex-col gap-3 text-xs sm:text-sm text-on-surface-variant font-light">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
+                <span>Jl. Pemuda No. 45, Tahunan, Jepara, Jawa Tengah 59411</span>
               </div>
-              <div className="flex items-center gap-2">
-                <TreeDeciduous className="w-3.5 h-3.5 text-secondary flex-shrink-0" />
-                <span>FSC 100% Recycled & Managed Teak</span>
+              <div className="flex items-center gap-2.5">
+                <MessageCircle className="w-4 h-4 text-secondary flex-shrink-0" />
+                <a
+                  href="https://wa.me/6281129408820"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  +62 811-2940-8820 (WhatsApp)
+                </a>
               </div>
-              <div className="flex items-center gap-2">
-                <Handshake className="w-3.5 h-3.5 text-secondary flex-shrink-0" />
-                <span>Sedex SMETA 4-Pillar Audited Fair Trade</span>
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-secondary flex-shrink-0" />
+                <a href="mailto:halo@kalakayu.com" className="hover:text-primary transition-colors">
+                  halo@kalakayu.com
+                </a>
               </div>
-              <div className="flex items-center gap-2">
-                <Box className="w-3.5 h-3.5 text-secondary flex-shrink-0" />
-                <span>Zero-Plastics Biodegradable Crating</span>
+              <div className="flex items-center gap-2.5">
+                <Clock className="w-4 h-4 text-secondary flex-shrink-0" />
+                <span>Senin – Sabtu: 08.00 – 17.00 WIB</span>
               </div>
             </div>
           </div>
-
-          {/* Trade Journal Newsletter (2 cols / full on mobile) */}
-          <div className="lg:col-span-2 flex flex-col gap-3">
-            <h4 className="font-serif text-base text-primary font-medium">
-              The Trade Journal
-            </h4>
-            <p className="text-xs text-on-surface-variant font-light leading-relaxed">
-              Private seasonal dispatch covering kiln schedules and collection previews.
-            </p>
-
-            <form onSubmit={handleSubscribe} className="flex flex-col gap-2 mt-1">
-              <div className="flex items-center bg-surface rounded-xl p-1 border border-outline-variant/30 shadow-xs">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="trade@atelier.com"
-                  required
-                  className="w-full bg-transparent px-2.5 py-1 text-xs text-on-surface placeholder:text-outline/70 focus:outline-none"
-                />
-                <button
-                  type="submit"
-                  className="bg-primary-container text-on-primary hover:bg-secondary p-1.5 rounded-lg transition-colors"
-                  aria-label="Subscribe"
-                >
-                  {subscribed ? <Check className="w-3.5 h-3.5" /> : <Send className="w-3.5 h-3.5" />}
-                </button>
-              </div>
-              <span className="text-[10px] text-outline">
-                {subscribed ? "Subscribed to Trade Journal." : "Dispatched biannually. Unsubscribe anytime."}
-              </span>
-            </form>
-          </div>
         </div>
 
-        {/* Legal & Shipping Strip */}
-        <div className="pt-8 flex flex-col lg:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
-          <div className="flex items-center gap-2 text-center lg:text-left">
-            <Truck className="w-4 h-4 text-secondary flex-shrink-0" />
-            <span>
-              Incoterms 2020: FOB Tanjung Emas (Semarang) & Tanjung Perak (Surabaya) • Global CIF Sea & Air Freight Fulfillment
-            </span>
-          </div>
-
-          <div className="flex items-center gap-6 text-[11px]">
-            <span>© 2025 PT Kala Kayu Nusantara. All rights reserved.</span>
-            <a href="#" className="hover:text-primary transition-colors">
-              Privacy & Terms
-            </a>
-            <a href="#" className="hover:text-primary transition-colors">
-              Export Compliance
-            </a>
+        {/* Copyright */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-outline">
+          <p>© {new Date().getFullYear()} Kala & Kayu. Hak cipta dilindungi undang-undang.</p>
+          <div className="flex items-center gap-1 text-[11px]">
+            <span>Dibuat dengan dedikasi kriya Indonesia</span>
+            <Heart className="w-3.5 h-3.5 text-secondary fill-secondary" />
           </div>
         </div>
       </div>

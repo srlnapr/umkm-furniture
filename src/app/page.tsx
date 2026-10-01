@@ -1,40 +1,36 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import ProvenanceSection from "@/components/ProvenanceSection";
-import ProductFolio from "@/components/ProductFolio";
-import StudioInspection from "@/components/StudioInspection";
-import TradeProgram from "@/components/TradeProgram";
-import TradeFormSection from "@/components/TradeFormSection";
+import AboutSection from "@/components/AboutSection";
+import ProductCatalog from "@/components/ProductCatalog";
+import WhyUsGallery from "@/components/WhyUsGallery";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-surface flex flex-col">
-      {/* Refined, Uncrowded Sticky Navbar with Framer Motion */}
+      {/* Sticky Navigation Bar */}
       <Navbar />
 
-      {/* Main Content Sections */}
+      {/* Main Content Sections: Hero → About → Products → Why Choose Us/Gallery → Contact */}
       <main className="flex-1 w-full flex flex-col">
-        {/* Hero Section with Ambient Glows & Trade Metrics */}
+        {/* 1. Beranda / Hero Section */}
         <HeroSection />
 
-        {/* Provenance & Sustainable Craft Journey */}
-        <ProvenanceSection />
+        {/* 2. Tentang Kami / Cerita Usaha */}
+        <AboutSection />
 
-        {/* Curated Trade Folio with Animated Category Switcher */}
-        <ProductFolio />
+        {/* 3. Katalog Produk (Maksimal 6 Produk Statis) */}
+        <ProductCatalog />
 
-        {/* Interactive Studio Inspection with Finish Swatches & Dimensions */}
-        <StudioInspection />
+        {/* 4. Keunggulan & Galeri Workshop */}
+        <WhyUsGallery />
 
-        {/* Wholesale & Trade Program (Logistics, OEM & Compliance) */}
-        <TradeProgram />
-
-        {/* Contact & Trade Partnership Application Form */}
-        <TradeFormSection />
+        {/* 5. Kontak & Lokasi Google Maps */}
+        <ContactSection />
       </main>
 
-      {/* Refined Footer */}
+      {/* 6. Footer Profil & Sosial Media */}
       <Footer />
     </div>
   );
